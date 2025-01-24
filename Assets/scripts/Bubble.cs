@@ -14,7 +14,6 @@ public class Bubble : MonoBehaviour
     {
         item = Instantiate(items[Random.Range(0, items.Count)], transform.position, Quaternion.identity);
         item.transform.parent = transform;
-        
     }
 
     void set_item(int x)
@@ -25,7 +24,6 @@ public class Bubble : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
-
     }
 
     private void OnMouseDown()
@@ -33,11 +31,6 @@ public class Bubble : MonoBehaviour
         Destroy(gameObject);
         item.transform.parent = null;
         item.AddComponent<Rigidbody2D>();
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log(other.gameObject.name);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
