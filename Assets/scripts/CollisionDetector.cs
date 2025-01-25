@@ -7,7 +7,7 @@ public class CollisionDetector : MonoBehaviour
 {
     public static Action<string> OnCollision;
     public static Action<int> score;
-     static int SCORE = 0;
+    public static int SCORE = 0;
 
     private void OnCollisionEnter2D(Collision2D other)
     {

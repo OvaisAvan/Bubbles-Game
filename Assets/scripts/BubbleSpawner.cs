@@ -112,7 +112,8 @@ public class BubbleSpawner : MonoBehaviour
     private void OnEnable()
     {
         CollisionDetector.score += set_score;
-        
+        CollisionDetector.SCORE = 0;
+
 
     }
 
