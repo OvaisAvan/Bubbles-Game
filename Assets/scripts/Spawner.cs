@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
 public class Spawner : MonoBehaviour
 {
     
@@ -36,5 +35,5 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    
+  
 }

@@ -8,6 +8,9 @@ TagManager:
   - Purple
   - Yellow
   - Green
+  - PurplePot
+  - YellowPot
+  - GreenPot
   layers:
   - Default
   - TransparentFX
