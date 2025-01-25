@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3860584963127959503}
   - component: {fileID: 1514930203355605482}
   - component: {fileID: 9210874637673016124}
+  - component: {fileID: -8612618784964765131}
   m_Layer: 0
   m_Name: Magenta
   m_TagString: Purple
@@ -123,3 +124,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8612618784964765131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948034180538683058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb942f9935e44f5b9a5db973d896ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

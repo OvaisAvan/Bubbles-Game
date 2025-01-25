@@ -49,20 +49,27 @@ public class Bubble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("Collision" + other.gameObject.name);
+
         if (other.gameObject.CompareTag("X"))
         {
             Destroy(this.gameObject);
         }
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
         if (other.gameObject.CompareTag("Yellow"))
         {
             Debug.Log("Correct Color");
         }
+        if (other.gameObject.CompareTag("Purple"))
+        {
+            Debug.Log("Correct Color");
+        }
+        if (other.gameObject.CompareTag("Green"))
+        {
+            Debug.Log("Correct Color");
+        }
     }
+    
+   
 
     private void DeactivateBubble()
     {
