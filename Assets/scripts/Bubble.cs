@@ -1,24 +1,22 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Bubble : MonoBehaviour
 {
-
     public float speed = 10f;
     public List<GameObject> items = new List<GameObject>();
     public GameObject item;
-    private void Awake()
-    {
-        item = Instantiate(items[Random.Range(0, items.Count)], transform.position, Quaternion.identity);
-        item.transform.parent = transform;
-    }
 
-    void set_item(int x)
+    private void OnEnable()
     {
-        
+        // Activate a random item when the bubble is enabled
+        if (items.Count > 0)
+        {
+            item = items[Random.Range(0, items.Count)];
+            item.SetActive(true);
+            item.transform.SetParent(transform, false);
+            item.transform.localPosition = Vector3.zero; // Center the item in the bubble
+        }
     }
 
     private void FixedUpdate()
@@ -28,17 +26,26 @@ public class Bubble : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        item.transform.parent = null;
-        item.AddComponent<Rigidbody2D>();
+        DeactivateBubble();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.CompareTag("X"))
         {
-            Destroy(gameObject);
+            DeactivateBubble();
+        }
+    }
+
+    private void DeactivateBubble()
+    {
+        if (item != null)
+        {
+            item.transform.SetParent(null);
+            GetComponent<Animator>().enabled = true;
+            item.AddComponent<Rigidbody2D>();
+            Destroy(item.gameObject, 5f);
+            Destroy(gameObject, 0.5f); 
         }
     }
 }

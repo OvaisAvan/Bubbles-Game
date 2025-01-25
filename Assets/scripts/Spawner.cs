@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     
     public List<GameObject> bubbles_prefabs;
     public List<GameObject> Active_Bubbles;
+    public GameObject bubbleContainer;
 
     
     
@@ -22,7 +23,7 @@ public class Spawner : MonoBehaviour
     {
         int x = Random.Range(0, bubbles_prefabs.Count);
         GameObject bubble = Instantiate(bubbles_prefabs[x], transform.position, Quaternion.identity);
-        bubble.transform.parent = transform;
+        bubble.transform.parent = bubbleContainer.transform;
         Active_Bubbles.Add(bubble);
     }
 
