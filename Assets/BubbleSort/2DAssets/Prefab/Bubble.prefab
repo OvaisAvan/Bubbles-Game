@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5132329939580586015}
   - component: {fileID: 3457142891279306171}
   - component: {fileID: 3839709417781392070}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 877172253733158756}
   - component: {fileID: 7830999750672936539}
   - component: {fileID: 593857420138602611}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 5267978682999590163}
   - component: {fileID: 3324834496299655049}
   - component: {fileID: 5015933704403361109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shield (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5043,7 +5043,7 @@ GameObject:
   - component: {fileID: 6930498143252555750}
   - component: {fileID: 8507474444427516307}
   - component: {fileID: 5313717319419000835}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Magenta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5149,7 +5149,7 @@ GameObject:
   - component: {fileID: 5761720223984632099}
   - component: {fileID: 8399556577508959220}
   - component: {fileID: 1663285829284195141}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5281,8 +5281,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7188343407271505944}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 3818777
+  m_SortingLayer: 1
   m_SortingOrder: 50
 --- !u!1 &7245915226472397069
 GameObject:
@@ -5295,7 +5295,7 @@ GameObject:
   - component: {fileID: 3326717907845281130}
   - component: {fileID: 3197302783321570855}
   - component: {fileID: 499425771544630149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
