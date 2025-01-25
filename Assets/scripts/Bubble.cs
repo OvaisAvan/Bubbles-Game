@@ -40,6 +40,7 @@ public class Bubble : MonoBehaviour
 
     private void OnMouseDown()
     {
+        AudioClips.instance.PlayBubbleEffect();
         DeactivateBubble();
     }
 
@@ -67,6 +68,6 @@ public class Bubble : MonoBehaviour
             Destroy(item.gameObject, 5f);
         }
 
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 0.3f);
     }
 }

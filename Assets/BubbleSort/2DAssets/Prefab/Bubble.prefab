@@ -5252,6 +5252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  floatAmplitude: 0.5
+  floatFrequency: 1
   items:
   - {fileID: 2187724112313165273}
   - {fileID: 681878943662024668}
@@ -5282,7 +5284,7 @@ SortingGroup:
   m_GameObject: {fileID: 7188343407271505944}
   m_Enabled: 1
   m_SortingLayerID: 3818777
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 50
 --- !u!1 &7245915226472397069
 GameObject:
