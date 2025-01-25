@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Bubble : MonoBehaviour
 {
@@ -8,18 +10,19 @@ public class Bubble : MonoBehaviour
     public float floatFrequency = 1f;
     public List<GameObject> items = new List<GameObject>();
     public GameObject item;
+    public List<SpriteRenderer> spriteRenderer;
 
     private Vector3 initialPosition; 
-    private float timeElapsed; 
+    private float timeElapsed;
+    private int itemIndex;
+    private SpriteRenderer itemSpriteRenderer;
     private void OnEnable()
     {
         if (items.Count > 0)
         {
-            item = items[Random.Range(0, items.Count)];
+            itemIndex = Random.Range(0, items.Count);
+            item = items[itemIndex];
             item.SetActive(true);
-
-            item.transform.SetParent(transform, false);
-            item.transform.localPosition = Vector3.zero; 
         }
     }
     public void SetInitialPosition(Vector3 position)
@@ -48,7 +51,16 @@ public class Bubble : MonoBehaviour
     {
         if (other.gameObject.CompareTag("X"))
         {
-            DeactivateBubble();
+            Destroy(this.gameObject);
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Yellow"))
+        {
+            Debug.Log("Correct Color");
         }
     }
 
@@ -56,16 +68,15 @@ public class Bubble : MonoBehaviour
     {
         if (item != null)
         {
-            item.transform.SetParent(null);
-
-            item.transform.position = transform.position;
+            //item.transform.SetParent(null);
+            Destroy(item);
+            itemSpriteRenderer = Instantiate(spriteRenderer[itemIndex], transform.position, Quaternion.identity);
+            GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<Animator>().enabled = true;
+            //rb.gravityScale = 1f;
+            //rb.constraints = RigidbodyConstraints2D.FreezePositionX; 
 
-            Rigidbody2D rb = item.AddComponent<Rigidbody2D>();
-            rb.gravityScale = 1f;
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX; 
-
-            Destroy(item.gameObject, 5f);
+            Destroy(itemSpriteRenderer.gameObject, 5f);
         }
 
         Destroy(gameObject, 0.3f);

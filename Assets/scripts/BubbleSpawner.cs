@@ -32,6 +32,8 @@ public class BubbleSpawner : MonoBehaviour
 
         GameObject bubble = Instantiate(bubblePrefab, canvasRectTransform);
 
+        bubble.transform.parent = this.gameObject.transform;
+
         RectTransform bubbleRect = bubble.GetComponent<RectTransform>();
         if (bubbleRect != null)
         {
