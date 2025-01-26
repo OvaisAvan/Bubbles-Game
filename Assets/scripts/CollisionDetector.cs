@@ -55,7 +55,6 @@ public class CollisionDetector : MonoBehaviour
             Debug.Log(other.gameObject.name);
             OnCollision?.Invoke("Invalid");
         }
-            Debug.Log(SCORE);
     }
 
 
